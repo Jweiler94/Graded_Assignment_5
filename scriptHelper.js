@@ -14,32 +14,30 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
                 </ol>
                 <img src="">
    */
+    document.querySelector("Name:").innerHTML = `Name: ${name}`
+           
 }
 
 function validateInput(testInput) {
-   if(testInput === "")  {
-    return "Empty";
-   }  else if(isNaN(testInput) === false) {
+
+   if(isNaN(testInput) === false) {
     return "Is a number";
-   }  else if(isNaN(testInput) === "true") {
+   }  else if(isNaN(testInput) === true) {
     return "Not a number";
    }
 }
 
 function formSubmission(document, list, pilotName, copilotName, fuelLevel, cargoMass) {
-    let submissionStatus;
     let items = document.getElementById(list);
     
     if( pilotName === "" || copilotName === "" || fuelLevel === "" || cargoMass === "") {
-        submissionStatus = "Empty";
-        items.style.visibility = 'hidden';
+        return "Empty";
+
     } else if( !validateInput(pilotName) === "Not a number" || !validateInput(copilotName) === "Not a number" || !validateInput(fuelLevel) === "Is a number" || !validateInput(cargoMass) === "Is a number") {
-        submissionStatus = "Incorrect";
-        items.style.visibility = 'hidden';
+        return "Incorrect";
     } else {
-        submissionStatus = "Correct";
+        return "Correct";
     }
-    return submissionStatus;
 }
     
 

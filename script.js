@@ -1,10 +1,11 @@
-const { formSubmission } = require("./scriptHelper");
+const { formSubmission } = require("./scriptHelper.js");
 
 window.addEventListener("load", function() {
     let form = document.querySelector("form");
 
-    form.addEventListener("Submit", function(event) {
+    form.addEventListener("submit", function(event) {
         event.preventDefault();
+
 
         let pilotNameInput = document.querySelector("input[name=pilotName]");
         let copilotNameInput = document.querySelector('input[name=copilotName]');
@@ -17,13 +18,16 @@ window.addEventListener("load", function() {
         let cargoStatus = document.getElementById('cargoStatus');
         let ready = true;
 
+        document.getElementsByTagName(h2).innerhtml
+
 
         //check for validity of entries below using helper functions
 
         if(formSubmission(document, faultyItems, pilotNameInput, copilotNameInput, fuelLevelInput, cargoMassInput) === "Empty") {
             ready = false;
             items.style.visibility = 'hidden';
-            alert("All fields must be completed for launch!");
+            
+            //alert("All fields must be completed for launch!");
 
         } else if (formSubmission(document, faultyItems, pilotNameInput, copilotNameInput, fuelLevelInput, cargoMassInput) === "Incorrect") {
             ready = false;

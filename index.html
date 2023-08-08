@@ -1,16 +1,25 @@
-<!DOCTYPE HTML>
+<!DOCTYPE>
 <html>
     <head>
         <title>Launch Checklist</title>
-        <link rel = "stylesheet" type = "text/css" href = "styles.css" />
-        <script src = "scriptHelper.js"></script>
-        <script src = "script.js"></script>
-        <script src = "bundle.js"></script>
+        <link rel = "stylesheet" type = "text/css" href = "./styles.css" />
+        <script src = "./scriptHelper.js" type="text/javascript"></script>
+        <script src = "./script.js" type="text/javascript"></script>
+        <script src = "./bundle.js"></script>
     </head>
     <body>
         <h1>Launch Checklist Form</h1>
         <div id="missionTarget" data-testid="missionTarget">
             <!-- Fetch some planetary data -->
+            <h2>Mission Destination</h2>
+                <ol>
+                    <li>Name: </li>
+                    <li>Diameter: </li>
+                    <li>Star: ${star}</li>
+                    <li>Distance from Earth: </li>
+                    <li>Number of Moons: </li>
+                </ol>
+                <img src="">
         </div>  
         <div id="launchForm">
             <form data-testid="testForm">
@@ -29,13 +38,6 @@
                 <button id="formSubmit">Submit</button>
             </form>
         </div>
-        <!---<script>
-            function alertFunction() {
-                if(submissionStatus === "Empty" || submissionStatus === "Incorrect") {
-                    alert(alertMessage);
-                }
-            }
-        </script>--->
         <div id="launchStatusCheck">
             <h2 id="launchStatus" data-testid="launchStatus">Awaiting Information Before Launch</h2>
             <div  id="faultyItems" data-testid="faultyItems">
