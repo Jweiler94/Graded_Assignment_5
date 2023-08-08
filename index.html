@@ -1,4 +1,4 @@
-<!DOCTYPE>
+<!DOCTYPE HTML>
 <html>
     <head>
         <title>Launch Checklist</title>
@@ -7,33 +7,6 @@
         <script src = "script.js"></script>
         <script src = "bundle.js"></script>
     </head>
-    <script>
-
-        window.addEventListener("load", function() {
-            let form = document.querySelector("testForm");
-            form.addEventListener("Submit", function(event) {
-                let pilotNameInput = document.querySelector("input[name=pilotName]");
-                let copilotNameInput = document.querySelector('input[name = copilotName]');
-                let fuelLevelInput = document.querySelector('input[name=fuelLevel]');
-                let cargoMassInput = document.querySelector('input[name=cargoMass]');
-                let inputsArray = [pilotNameInput, copilotNameInput, fuelLevelInput, cargoMassInput];
-
-                for ( i = 0; i < inputsArray.length; i++) {
-                    if (validateInput(inputsArray[i]) === "Empty") {
-                        alert("All fields are required!");
-                        event.preventDefault();
-                    }
-                }
-
-                if (!validateInput(inputsArray[0]) === "Not a number" || !validateInput(inputsArray[1] === "Not a number") || !validateInput[2] === "Is a number" || !validateInput(inputsArray[3] === "Is a number")) {
-                    alert("Pilot and Co-Pilot names must be strings, Fuel Level and Cargo Mass must be numbers!");
-                    event.preventDefault();
-                }
-
-        });
-    });
-
-    </script>
     <body>
         <h1>Launch Checklist Form</h1>
         <div id="missionTarget" data-testid="missionTarget">
@@ -56,6 +29,13 @@
                 <button id="formSubmit">Submit</button>
             </form>
         </div>
+        <!---<script>
+            function alertFunction() {
+                if(submissionStatus === "Empty" || submissionStatus === "Incorrect") {
+                    alert(alertMessage);
+                }
+            }
+        </script>--->
         <div id="launchStatusCheck">
             <h2 id="launchStatus" data-testid="launchStatus">Awaiting Information Before Launch</h2>
             <div  id="faultyItems" data-testid="faultyItems">
